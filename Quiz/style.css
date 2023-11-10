@@ -1,0 +1,25 @@
+/* CSS for styling */
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.question {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+}
+.option {
+    margin: 10px 0;
+}
+#score {
+    font-weight: bold;
+    margin-top: 20px;
+}

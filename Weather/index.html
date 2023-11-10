@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Application</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #weatherInfo {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 200px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: rgba(109, 6, 6, 0.589);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e53a3a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Information</h1>
+    
+    <label for="cityInput">Enter City:</label>
+    <input type="text" id="cityInput">
+    <button id="searchButton">Search</button>
+    
+    <div id="weatherInfo">
+        <p>City: <span id="city"></span></p>
+        <p>Temperature: <span id="temperature"></span>°C</p>
+        <p>Weather: <span id="description"></span></p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>Wind Speed: <span id="windSpeed"></span> m/s</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#searchButton").click(function () {
+                var city = $("#cityInput").val();
+                getWeatherData(city);
+            });
+
+            function getWeatherData(city) {
+                var apiKey = "c530dc7df4829c2f8d100e3d168471d1";
+                var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+                $.ajax({
+                    url: apiUrl,
+                    method: "GET",
+                    success: function (data) {
+                        $("#city").text(data.name);
+                        $("#temperature").text(data.main.temp);
+                        $("#description").text(data.weather[0].description);
+                        $("#humidity").text(data.main.humidity);
+                        $("#windSpeed").text(data.wind.speed);
+                    },
+                    error: function (error) {
+                        alert("City not found. Please try again.");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
