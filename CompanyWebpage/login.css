@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container  {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+.form  {
+    display: inline-flex;
+    flex-direction: column;
+}
+.form > .form1, .form2{
+    display: inline-flex;
+    flex-direction: column;
+    margin: 10px;
+    
+   
+}
+.form1, .form2 {
+    text-align: start;
+    width: 300px;
+}
+
+
+
+ .btn > input{
+    
+    
+   width: 40px;
+}
+.btn > a {
+    width: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

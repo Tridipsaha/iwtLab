@@ -1,0 +1,56 @@
+ ul{
+    list-style: none;
+ }
+
+ a{
+    text-decoration: none;
+ }
+
+ body{
+    margin: 0px;
+    padding: 0px;
+    font-family: popins;
+ }
+
+
+
+
+ .navigation{
+    display: flex;
+    justify-content:space-between;
+    
+    margin: .4%;
+    background-color: #dddddd;
+    align-items: center;
+ }
+ .menu{
+    display: flex;
+    justify-content: space-around;
+ }
+ .navigation > .logo {
+    align-items: start;
+    
+ }
+ .menu > li{
+    padding: 10px;
+ }
+
+
+
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
